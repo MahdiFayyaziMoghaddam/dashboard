@@ -13,9 +13,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="text-[62.5%]">
       <body
-        className={`antialiased bg-main-background text-main-text text-[62.5%] min-h-screen m-0 p-0 font-main selection:bg-main-primary scroll-smooth`}
+        className={`antialiased flex justify-center items-stretch bg-main-background text-main-text min-h-screen text-[1.6rem] m-0 p-0 font-main selection:bg-main-primary scroll-smooth`}
         cz-shortcut-listen="true"
       >
         {children}
