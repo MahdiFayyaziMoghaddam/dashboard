@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Sidebar from "@/components/organisms/Sidebar";
+import Header from "@/components/organisms/Header";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -13,12 +15,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="text-[62.5%]">
+    <html lang="en" className="text-[62.5%] box-border">
       <body
         className={`antialiased flex justify-center items-stretch bg-main-background text-main-text min-h-screen text-[1.6rem] m-0 p-0 font-main selection:bg-main-primary scroll-smooth`}
         cz-shortcut-listen="true"
       >
-        {children}
+        <Sidebar />
+        <main className="relative flex flex-col items-stretch grow overflow-auto">
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );

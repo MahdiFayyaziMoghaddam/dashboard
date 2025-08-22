@@ -12,7 +12,7 @@
 @theme {
   --color-main-primary: #4880ff;
   --color-main-orange: #ff9500;
-  --color-main-red: #ff4f4f;
+  --color-main-red: #f93c65;
   --color-main-yellow: #ffa756;
   --color-main-green: #00b69b;
   --color-main-violet: #d456fd;
@@ -26,6 +26,14 @@
 * {
   transition: background 200ms ease-in-out 50ms;
   transition: color 200ms ease-in-out 50ms;
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 0.3rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-main-primary);
+    border-radius: 1rem;
+  }
 }
 
 @font-face {
