@@ -17,15 +17,21 @@
   --color-main-green: #00b69b;
   --color-main-violet: #d456fd;
   --color-main-purple: #6226ef;
+  --color-main-white: #fff;
   --color-main-background: var(--bg-dark);
   --color-main-box: var(--box-dark);
   --color-main-text: var(--text-light);
   --font-main: "source-sans";
+  --breakpoint-2xl: 1440px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-lg: 992px;
+  --breakpoint-md: 768px;
+  --breakpoint-sm: 480px;
+  --breakpoint-xs: 360px;
 }
 
 * {
-  transition: background 200ms ease-in-out 50ms;
-  transition: color 200ms ease-in-out 50ms;
+  outline: none;
   &::-webkit-scrollbar {
     background-color: transparent;
     width: 0.3rem;
@@ -34,6 +40,14 @@
     background-color: var(--color-main-primary);
     border-radius: 1rem;
   }
+}
+
+button {
+  @apply cursor-pointer;
+}
+
+hr {
+  @apply w-full border-main-text/12 border-t-1 h-0;
 }
 
 @font-face {

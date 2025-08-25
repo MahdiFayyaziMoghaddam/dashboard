@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import "./globals.css";
 import Sidebar from "@/components/organisms/Sidebar";
 import Header from "@/components/organisms/Header";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Dashboard",
@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="text-[62.5%] box-border">
       <body
-        className={`antialiased flex justify-center items-stretch bg-main-background text-main-text min-h-screen text-[1.6rem] m-0 p-0 font-main selection:bg-main-primary scroll-smooth`}
+        className={`antialiased flex justify-center items-stretch bg-main-background text-main-text min-h-screen text-[1.6rem] m-0 p-0 font-main selection:bg-main-primary scroll-smooth isolate`}
         cz-shortcut-listen="true"
       >
         <Sidebar />

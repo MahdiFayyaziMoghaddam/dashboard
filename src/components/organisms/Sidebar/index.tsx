@@ -43,10 +43,7 @@ const Sidebar = () => {
         </Link>
         {dashboardLinks.map((link, i) =>
           link.label === "DIVIDER" ? (
-            <hr
-              key={i}
-              className="w-full border-main-text/12 border-t-1 my-[1.6rem]"
-            />
+            <hr key={i} className="my-[1.6rem]" />
           ) : (
             <div
               key={i}
