@@ -1,12 +1,13 @@
 "use client";
 import Image from "@/components/atoms/Image";
 import ArrowDown from "@/components/atoms/svg/ArrowDown";
+import { Roles } from "@/types/roles";
 import { Avatar, Select as S } from "@base-ui-components/react";
 import React from "react";
 
 interface UserSelectProps {
   name: string;
-  role: string;
+  role: Roles;
   imgSrc: string;
 }
 
@@ -46,11 +47,11 @@ const User = ({ imgSrc, name, role }: UserSelectProps) => {
           positionMethod="absolute"
           sideOffset={8}
         >
-          <S.Popup className="py-[0.6rem] w-[20rem] overflow-hidden border-main-white/8 border-1 rounded-[1.4rem] shadow-2xs bg-main-box transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[side=none]:data-[ending-style]:transition-none data-[starting-style]:scale-90 data-[starting-style]:opacity-0 data-[side=none]:data-[starting-style]:scale-100 data-[side=none]:data-[starting-style]:opacity-100 data-[side=none]:data-[starting-style]:transition-none">
+          <S.Popup className="py-[0.6rem] w-[20rem] overflow-hidden border-main-light/8 border-1 rounded-[1.4rem] shadow-2xs bg-main-box transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[ending-style]:opacity-0 data-[side=none]:data-[ending-style]:transition-none data-[starting-style]:scale-90 data-[starting-style]:opacity-0 data-[side=none]:data-[starting-style]:scale-100 data-[side=none]:data-[starting-style]:opacity-100 data-[side=none]:data-[starting-style]:transition-none">
             {options.map(({ img, title }) => (
               <S.Item
                 key={title}
-                className="flex items-center justify-between p-[1.4rem] px-[2rem] min-w-[var(--anchor-width)] cursor-pointer grid-cols-[0.75rem_1fr] leading-4 outline-none select-none group-data-[side=none]:min-w-[calc(var(--anchor-width)+1rem)] group-data-[side=none]:text-base group-data-[side=none]:leading-4 data-[highlighted]:relative data-[highlighted]:z-0 data-[highlighted]:text-gray-50 data-[highlighted]:before:absolute data-[highlighted]:before:inset-x-1 data-[highlighted]:before:inset-y-0 data-[highlighted]:before:z-[-1] data-[highlighted]:before:rounded-sm hover:bg-main-white/5 pointer-coarse:py-2.5 pointer-coarse:text-[0.925rem]"
+                className="flex items-center justify-between p-[1.4rem] px-[2rem] min-w-[var(--anchor-width)] cursor-pointer grid-cols-[0.75rem_1fr] leading-4 outline-none select-none group-data-[side=none]:min-w-[calc(var(--anchor-width)+1rem)] group-data-[side=none]:text-base group-data-[side=none]:leading-4 data-[highlighted]:relative data-[highlighted]:z-0 data-[highlighted]:text-gray-50 data-[highlighted]:before:absolute data-[highlighted]:before:inset-x-1 data-[highlighted]:before:inset-y-0 data-[highlighted]:before:z-[-1] data-[highlighted]:before:rounded-sm hover:bg-main-light/5 pointer-coarse:py-2.5 pointer-coarse:text-[0.925rem]"
               >
                 <div className="flex items-center gap-[1.4rem]">
                   <Image

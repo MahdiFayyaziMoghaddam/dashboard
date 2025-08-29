@@ -1,9 +1,22 @@
 "use client";
+import { useSidebarContext } from "@/context/Sidebar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 const Sidebar = () => {
   const pathname = usePathname();
+  const { isOpenSidebar, setIsOpenSidebar } = useSidebarContext();
+
+  useEffect(() => {
+    const ctrl = new AbortController();
+    window.addEventListener(
+      "keydown",
+      (e) => e.key === "Escape" && setIsOpenSidebar(false),
+      { signal: ctrl.signal }
+    );
+    return () => ctrl.abort();
+  }, [setIsOpenSidebar]);
 
   type DashboardLinks = {
     label: string | "DIVIDER";
@@ -34,7 +47,17 @@ const Sidebar = () => {
 
   return (
     <>
-      <aside className="flex flex-col justify-start items-center w-[24rem] py-[2.4rem] bg-main-box overflow-auto max-h-screen">
+      <div
+        className={`xl:hidden max-xl:fixed max-xl:top-0 max-xl:left-0 max-xl:bottom-0 max-xl:w-screen max-xl:bg-main-dark/85 ${
+          !isOpenSidebar ? "max-xl:opacity-0 max-xl:-z-10" : "max-xl:z-40"
+        }`}
+        onClick={() => setIsOpenSidebar(false)}
+      ></div>
+      <aside
+        className={`flex flex-col justify-start items-center w-[24rem] py-[2.4rem] bg-main-box overflow-auto max-h-screen max-xl:fixed max-xl:left-0 max-xl:z-50 duration-300 ${
+          !isOpenSidebar ? "max-xl:-left-[24rem]!" : ""
+        }`}
+      >
         <Link
           href={"/"}
           className="text-[2rem] font-bold text-main-primary mb-[3rem]"

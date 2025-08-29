@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Sidebar from "@/components/organisms/Sidebar";
 import Header from "@/components/organisms/Header";
+import { ContextProviders } from "@/context";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,14 +18,19 @@ export default function RootLayout({
   return (
     <html lang="en" className="text-[62.5%] box-border">
       <body
-        className={`antialiased flex justify-center items-stretch bg-main-background text-main-text min-h-screen text-[1.6rem] m-0 p-0 font-main selection:bg-main-primary scroll-smooth isolate`}
+        className={`antialiased flex justify-center items-stretch bg-main-background text-main-text min-h-screen text-[1.6rem] m-0 p-0 font-main selection:bg-main-primary scroll-smooth isolate max-lg:items-center!`}
         cz-shortcut-listen="true"
       >
-        <Sidebar />
-        <main className="relative flex flex-col items-stretch grow overflow-auto">
-          <Header />
-          {children}
-        </main>
+        <h1 className="lg:hidden fixed text-center max-lg:text-[1.8rem] max-md:text-[1.4rem] max-sm:text-[1.2rem] text-main-text/50">
+          This project is not supported on small width devices!
+        </h1>
+        <ContextProviders>
+          <Sidebar />
+          <main className="relative flex flex-col items-stretch grow overflow-auto **:max-lg:hidden">
+            <Header />
+            {children}
+          </main>
+        </ContextProviders>
       </body>
     </html>
   );
