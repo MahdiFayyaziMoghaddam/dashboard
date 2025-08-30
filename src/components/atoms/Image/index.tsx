@@ -9,10 +9,11 @@ interface Image {
 
 export default function Image({ alt, src, className }: Image) {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative ${className} select-none z-0`}>
       <I
         alt={alt}
         src={src}
+        draggable={false}
         fill
         style={{ position: "absolute", objectFit: "cover" }}
       />

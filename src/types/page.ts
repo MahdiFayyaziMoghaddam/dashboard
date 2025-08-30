@@ -1,0 +1,15 @@
+export type Page =
+  | "products"
+  | "favorites"
+  | "inbox"
+  | "orders"
+  | "stock"
+  | "pricing"
+  | "calendar"
+  | "todo"
+  | "contact"
+  | "invoice"
+  | "ui-elements"
+  | "team"
+  | "table"
+  | "settings";

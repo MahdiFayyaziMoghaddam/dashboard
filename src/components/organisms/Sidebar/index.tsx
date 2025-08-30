@@ -54,7 +54,7 @@ const Sidebar = () => {
         onClick={() => setIsOpenSidebar(false)}
       ></div>
       <aside
-        className={`flex flex-col justify-start items-center w-[24rem] py-[2.4rem] bg-main-box overflow-auto max-h-screen max-xl:fixed max-xl:left-0 max-xl:z-50 duration-300 ${
+        className={`flex flex-col justify-start items-center w-[24rem] py-[2.4rem] bg-main-box overflow-auto max-h-screen max-xl:fixed max-xl:left-0 max-xl:z-50 duration-300 **:shrink-0 ${
           !isOpenSidebar ? "max-xl:-left-[24rem]!" : ""
         }`}
       >
@@ -78,7 +78,10 @@ const Sidebar = () => {
             >
               <Link
                 href={link.href ? link.href : "#"}
-                onClick={link.onClick}
+                onClick={() => {
+                  link.onClick?.();
+                  setIsOpenSidebar(false);
+                }}
                 className={`text-main-text w-full pl-[3.5rem] text-[1.4rem] ${
                   pathname === link.href ? "bg-main-primary" : ""
                 } rounded-[0.6rem] py-[1.5rem] shrink-0`}

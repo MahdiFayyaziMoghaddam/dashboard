@@ -18,17 +18,17 @@ export default function RootLayout({
   return (
     <html lang="en" className="text-[62.5%] box-border">
       <body
-        className={`antialiased flex justify-center items-stretch bg-main-background text-main-text min-h-screen text-[1.6rem] m-0 p-0 font-main selection:bg-main-primary scroll-smooth isolate max-lg:items-center!`}
+        className={`antialiased flex justify-center items-stretch bg-main-background text-main-text min-h-screen text-[1.6rem] m-0 p-0 font-main selection:bg-main-primary scroll-smooth isolate max-lg:items-center! overflow-hidden`}
         cz-shortcut-listen="true"
       >
-        <h1 className="lg:hidden fixed text-center max-lg:text-[1.8rem] max-md:text-[1.4rem] max-sm:text-[1.2rem] text-main-text/50">
+        <h1 className="lg:hidden fixed text-center max-lg:text-[2.5rem]! max-md:text-[1.8rem]! max-sm:text-[1.3rem]! text-main-text/50">
           This project is not supported on small width devices!
         </h1>
         <ContextProviders>
           <Sidebar />
-          <main className="relative flex flex-col items-stretch grow overflow-auto **:max-lg:hidden">
+          <main className="relative flex flex-col items- grow max-h-screen overflow-auto **:max-lg:hidden **:shrink-0">
             <Header />
-            {children}
+            <div className="px-[3rem] pt-[3rem]">{children}</div>
           </main>
         </ContextProviders>
       </body>

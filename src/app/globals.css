@@ -48,6 +48,10 @@ button {
   @apply cursor-pointer;
 }
 
+h1 {
+  @apply text-[3.2rem] font-semibold;
+}
+
 hr {
   @apply w-full border-main-text/12 border-t-1 h-0;
 }

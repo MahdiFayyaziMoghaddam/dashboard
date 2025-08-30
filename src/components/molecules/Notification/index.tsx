@@ -38,7 +38,7 @@ export default function Notification() {
           sideOffset={8}
         >
           <S.Popup
-            className={`py-[0.8rem] w-[25rem] h-[25.6rem] border-main-light/8 border-1 overflow-auto rounded-[1.4rem] shadow-2xs bg-main-box ${
+            className={`py-[0.8rem] w-[25rem] z-50 h-[25.6rem] border-main-light/8 border-1 overflow-auto rounded-[1.4rem] shadow-2xs bg-main-box ${
               !notifs.length ? "flex justify-center items-center" : ""
             }`}
           >
