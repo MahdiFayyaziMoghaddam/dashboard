@@ -5,9 +5,15 @@ interface Image {
   src: string;
   alt: string;
   className?: string;
+  objectFit?: "cover" | "contain" | "fill";
 }
 
-export default function Image({ alt, src, className }: Image) {
+export default function Image({
+  alt,
+  src,
+  className,
+  objectFit = "cover",
+}: Image) {
   return (
     <div className={`relative ${className} select-none z-0`}>
       <I
@@ -15,7 +21,7 @@ export default function Image({ alt, src, className }: Image) {
         src={src}
         draggable={false}
         fill
-        style={{ position: "absolute", objectFit: "cover" }}
+        style={{ position: "absolute", objectFit }}
       />
     </div>
   );

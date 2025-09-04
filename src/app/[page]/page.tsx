@@ -1,3 +1,5 @@
+import Favorites from "@/pages/Favorites";
+import Products from "@/pages/Products";
 import type { Page as PageType } from "@/types/page";
 import { notFound } from "next/navigation";
 import React from "react";
@@ -11,15 +13,15 @@ export default async function Page({
 
   switch (page) {
     case "products":
-      return <h1>products!</h1>;
+      return <Products />;
+    case "favorites":
+      return <Favorites />;
+    case "inbox":
+      return <h1>inbox!</h1>;
     case "calendar":
       return <h1>calendar!</h1>;
     case "contact":
       return <h1>contact!</h1>;
-    case "favorites":
-      return <h1>favorites!</h1>;
-    case "inbox":
-      return <h1>inbox!</h1>;
     case "invoice":
       return <h1>invoice!</h1>;
     case "orders":

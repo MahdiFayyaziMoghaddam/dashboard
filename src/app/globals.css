@@ -1,5 +1,8 @@
 @import "tailwindcss";
+@import "tailwindcss";
+@import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
 :root {
   --bg-dark: #1b2431;
   --bg-light: #f5f6fa;
@@ -11,7 +14,7 @@
 
 @theme {
   --color-main-primary: #4880ff;
-  --color-main-orange: #ff9500;
+  --color-main-orange: #ff8743;
   --color-main-red: #f93c65;
   --color-main-yellow: #ffa756;
   --color-main-green: #00b69b;
